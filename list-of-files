@@ -1,0 +1,5 @@
+total 8
+drwxrwxr-x 8 tdwong tdwong 4096 Oct 21 11:24 .git/
+-rw-rw-r-- 1 tdwong tdwong    0 Oct 21 11:50 list-of-files
+drwxrwxr-x 3 tdwong tdwong 4096 Oct 21 11:10 temp/
+-rw-rw-r-- 1 tdwong tdwong    0 Oct 21 11:19 testFile
