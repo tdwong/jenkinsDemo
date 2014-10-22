@@ -1,0 +1,65 @@
+SX Files
+# --------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# --------------------
+# IntelliJ Files
+# --------------------
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+
+# --------------------
+# Eclipse Files
+# --------------------
+.project
+.metadata
+*.bak
+.classpath
+.settings/
+
+# --------------------
+# Vagrant Files
+# --------------------
+.vagrant
+
+# --------------------
+# App Files
+# --------------------
+*.class
+*.jar
+*.log
+*.*~
+*.orig
+/RemoteSystemsTempFiles/
+/Servers/
+target
+atlas-*/logs/
+logs/
+test-output
+
+# --------------------
+# Sublime Text Files
+# --------------------
+*.sublime-project
+*.sublime-workspace
+
+# --------------------
+# Gradle Files
+# --------------------
+.gradle
+build/
+!libs/*.jar
+!gradle/**/*.jar
+.java-version
+local-gradle/
+
+

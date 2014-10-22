@@ -1,8 +1,48 @@
-
-// apply plugin: "groovy"
-apply plugin: 'war'
-
-task wrapper(type: Wrapper) {
-	gradleVersion = '2.1'
+// For Cobertura pulling in
+/* 2.1 */
+plugins {
+  id 'net.saliman.cobertura' version '2.2.5'
 }
 
+apply plugin: "groovy"
+apply plugin : 'war'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.1'
+}
+
+repositories {
+  // Spock releases are available from Maven Central
+  mavenCentral()
+  // Spock snapshots are available from the Sonatype OSS snapshot repository
+  maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
+}
+
+dependencies {
+  // mandatory dependencies for using Spock
+  compile "org.codehaus.groovy:groovy-all:2.3.6"
+  compile 'commons-lang:commons-lang:2.3'
+  testCompile "org.spockframework:spock-core:1.0-groovy-2.3-SNAPSHOT"
+}
+
+test {
+//  reports.html.enabled = true
+}
+
+// For Cobertura pulling in
+/*2.0*/
+/*
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "net.saliman:gradle-cobertura-plugin:2.2.5"
+    }
+}
+apply plugin: 'net.saliman.cobertura'
+*/
+cobertura {
+    coverageFormats = [ 'xml', 'html' ]
+    coverageMergeDatafiles = subprojects.collect { new File(it.projectDir, '/build/cobertura/cobertura.ser') }
+}
